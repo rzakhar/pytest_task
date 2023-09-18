@@ -7,7 +7,7 @@ link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
 
 class TestMarketplace:
-    def test_guest_should_see_login_link(self, browser):
+    def test_guest_should_see_add_to_basket_button(self, browser):
         browser.get(link)
         # time.sleep(30)
 
@@ -15,5 +15,5 @@ class TestMarketplace:
             ec.presence_of_element_located((By.CSS_SELECTOR, "p.price_color"))
         )
 
-        assert len(browser.find_elements(By.CSS_SELECTOR, "button.btn-add-to-basket")) > 0, \
+        assert len(browser.find_elements(By.CSS_SELECTOR, "button.btn-add-to-basket")) == 1, \
             "Cannot find 'Add to basket' button"
